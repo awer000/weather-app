@@ -1,0 +1,20 @@
+@import "styles/utils.scss";
+
+* {
+  font-size: 1rem;
+  color: white;
+}
+
+.item {
+  .weather-img {
+    padding-left: 30rem;
+    @include media("≥phone", "≤tablet") {
+      padding-left: 0.5rem;
+    }
+  }
+
+  &:hover {
+    background-color: pink;
+    opacity: 0.8;
+  }
+}
