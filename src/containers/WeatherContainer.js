@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as weatherActions from "store/modules/weather";
 import WeatherTemplate from "components/WeatherTemplate";
+import { ChasingDots } from "better-react-spinkit";
 
 class WeatherContainer extends Component {
   state = {
@@ -27,9 +28,7 @@ class WeatherContainer extends Component {
     this.getWeather();
   }
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.data !== prevState.data) {
-      this.getWeather();
-    }
+    return this.state.data !== prevState.data;
   }
 
   render() {
@@ -49,7 +48,7 @@ class WeatherContainer extends Component {
               (dataList[0].weather[0].main === "Clear" &&
                 "url(https://www.joongdo.co.kr/mnt/images/file/2017y/09m/27d/20170927001702132_1.jpg)") ||
               (dataList[0].weather[0].main === "Clouds" &&
-                "url(https://i.imgur.com/WGw0CUF.jpg)"),
+                "url(https://cdn.pixabay.com/photo/2016/09/28/22/34/clouds-1701660_1280.jpg)"),
 
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat"
@@ -60,7 +59,18 @@ class WeatherContainer extends Component {
       );
     }
 
-    return <div />;
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop: "15rem"
+        }}
+      >
+        <ChasingDots color="white" size={60} />
+      </div>
+    );
   }
 }
 
