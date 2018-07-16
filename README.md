@@ -4,6 +4,8 @@ weather-app
 
 React를 이용해서 구현하였고, 날씨 api를 이용해서 날씨를 확인하는 웹 어플리케이션입니다.
 
+![Alt text](/src/styles/img/clear.jpg)
+
 컴포넌트 구조 간단 설명
 ----------
 
