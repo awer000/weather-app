@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 8d8048b876363d42f43f68790509e1bf21a46c96
-=======
 weather-app
 ============
 
@@ -314,4 +309,3 @@ export default handleActions(
 );
 
 ```
->>>>>>> 2ff5f50ee2327e6420c272ea2d717614986e67be
