@@ -1,42 +1,10 @@
-<<<<<<< HEAD
-=======
-weather-app
-============
-
-React 를 이용해서 구현하였고, 날씨 api 를 이용해서 날씨를 확인하는 웹 어플리케이션입니다.
-
-## 컴포넌트 구조 간단 설명
-
-- components
-  - App.js
-  - WeatherList.js (받아온 api 정보를 배열로 나타내고 그 배열을 각각 컴포넌트로 변환하고 렌더링 함)
-  - WeatherList.scss
-  - WeatherTemplate.js (WeatherList 를 감싸는 템플릿 컴포넌트)
-  - weatherTemplate.scss
-- containers
-  - WeatherContainer.js (store 의 weather 리덕스와 WeatherList 를 연결해주는 컴포넌트)
-- lib
-  - api.js (날씨 api 에 get 요청을 보내서 그것의 응답을 리턴하는 함수를 만듦 - redux 에서 사용하기 위함)
-- store
-  - modules
-    - index.js
-    - weather.js (api.js 파일을 이용하여 리덕스를 만드는 함수)
-  - configures.js (weather.js 파일에서 만든 리듀서를 가져와서 리덕스 store 를 만들어주는 함수)
-  - index.js
-- styles
-  - img (배경으로 사용할 이미지 파일)
-    - clear.jpg
-    - clouds.jpg
-    - rain.jpg
-  - utils.scss
-=======
 
 weather-app
 ============
 
 React를 이용해서 구현하였고, 날씨 api를 이용해서 날씨를 확인하는 웹 어플리케이션입니다.
 
-![Alt text](/src/styles/img/clear.jpg)
+![Alt text](/src/styles/img/weather-app.png)
 
 컴포넌트 구조 간단 설명
 ----------
@@ -63,7 +31,6 @@ React를 이용해서 구현하였고, 날씨 api를 이용해서 날씨를 확�
     * clouds.jpg
     * rain.jpg
   * utils.scss
->>>>>>> 90a4cf9fa2237c10bb26b00bee1dad0bed04647e
 
 # Components 폴더의 컴포넌트들 설명
 
