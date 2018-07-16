@@ -1,39 +1,33 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8d8048b876363d42f43f68790509e1bf21a46c96
 =======
 weather-app
 ============
 
-React를 이용해서 구현하였고, 날씨 api를 이용해서 날씨를 확인하는 웹 어플리케이션입니다.
+React 를 이용해서 구현하였고, 날씨 api 를 이용해서 날씨를 확인하는 웹 어플리케이션입니다.
 
-컴포넌트 구조 간단 설명
-----------
+## 컴포넌트 구조 간단 설명
 
-* components 
-  * App.js
-  * WeatherList.js (받아온 api 정보를 배열로 나타내고 그 배열을 각각 컴포넌트로 변환하고 렌더링 함)
-  * WeatherList.scss
-  * WeatherTemplate.js (WeatherList를 감싸는 템플릿 컴포넌트)
-  * weatherTemplate.scss
-* containers
-  * WeatherContainer.js (store의 weather 리덕스와 WeatherList를 연결해주는 컴포넌트)
-* lib
-  * api.js (날씨 api에 get 요청을 보내서 그것의 응답을 리턴하는 함수를 만듦 - redux에서 사용하기 위함)
-* store
-  * modules
-    * index.js
-    * weather.js (api.js 파일을 이용하여 리덕스를 만드는 함수)
-  * configures.js (weather.js 파일에서 만든 리듀서를 가져와서 리덕스 store를 만들어주는 함수)
-  * index.js
-* styles
-  * img (배경으로 사용할 이미지 파일)
-    * clear.jpg
-    * clouds.jpg
-    * rain.jpg
-  * utils.scss
+- components
+  - App.js
+  - WeatherList.js (받아온 api 정보를 배열로 나타내고 그 배열을 각각 컴포넌트로 변환하고 렌더링 함)
+  - WeatherList.scss
+  - WeatherTemplate.js (WeatherList 를 감싸는 템플릿 컴포넌트)
+  - weatherTemplate.scss
+- containers
+  - WeatherContainer.js (store 의 weather 리덕스와 WeatherList 를 연결해주는 컴포넌트)
+- lib
+  - api.js (날씨 api 에 get 요청을 보내서 그것의 응답을 리턴하는 함수를 만듦 - redux 에서 사용하기 위함)
+- store
+  - modules
+    - index.js
+    - weather.js (api.js 파일을 이용하여 리덕스를 만드는 함수)
+  - configures.js (weather.js 파일에서 만든 리듀서를 가져와서 리덕스 store 를 만들어주는 함수)
+  - index.js
+- styles
+  - img (배경으로 사용할 이미지 파일)
+    - clear.jpg
+    - clouds.jpg
+    - rain.jpg
+  - utils.scss
 
 # Components 폴더의 컴포넌트들 설명
 
@@ -45,7 +39,7 @@ import "./WeatherList.scss";
 
 const WeatherList = ({ data }) => {
   // WeatherList.js 에서 보내주는 data를 받아와서 (이 데이터는 배열 구조이다.)
-  // map 메서드를 이용해서 컴포넌트를 반환한다. 
+  // map 메서드를 이용해서 컴포넌트를 반환한다.
   const subWeatherList = data.map(value => (
     <div
       className="item"
@@ -57,7 +51,7 @@ const WeatherList = ({ data }) => {
       }}
     >
       <div className="days">{value.dt_txt.substring(0, 16)}</div>
-      { /*자료로 받아오는 날짜를 원하는 만큼 잘라낸다.*/ } 
+      {/*자료로 받아오는 날짜를 원하는 만큼 잘라낸다.*/}
       <div
         className="weather-img"
         style={{
@@ -70,7 +64,7 @@ const WeatherList = ({ data }) => {
           alt="weather-img"
           src={`//openweathermap.org/img/w/${value.weather[0].icon}.png`}
         />
-        { /*날씨마다 다른 아이콘을 api에서 자체 제공하기 때문에 그것을 사용하기 위해서 src 주소 내에 변수를 사용해서 받아온다.*/ } 
+        {/*날씨마다 다른 아이콘을 api에서 자체 제공하기 때문에 그것을 사용하기 위해서 src 주소 내에 변수를 사용해서 받아온다.*/}
         <div style={{ paddingLeft: "1rem" }}>
           {(value.main.temp - 275.15).toFixed(2) + "°C"}
           {/* 절대온도를 섭씨온도로 보여주기 위해 사용한 수식*/}
@@ -103,9 +97,6 @@ const WeatherList = ({ data }) => {
 };
 
 export default WeatherList;
-
-
-
 ```
 
 ## WeatherTemplate.js
@@ -126,7 +117,6 @@ const WeatherTemplate = ({ data }) => {
 };
 
 export default WeatherTemplate;
-
 ```
 
 ## App.js
@@ -144,7 +134,6 @@ class App extends Component {
 }
 
 export default App;
-
 ```
 
 # Containers 폴더 설명
@@ -252,7 +241,6 @@ export default connect(
     WeatherActions: bindActionCreators(weatherActions, dispatch)
   })
 )(WeatherContainer);
-
 ```
 
 # lib 폴더 설명
@@ -272,7 +260,6 @@ export function getWeather() {
     // 리덕스에서 사용하기 위해 만들었다.
   );
 }
-
 ```
 
 # store 폴더 설명
@@ -312,6 +299,4 @@ export default handleActions(
   },
   initialState
 );
-
 ```
->>>>>>> 2ff5f50ee2327e6420c272ea2d717614986e67be
